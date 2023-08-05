@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+<div>
+    <h1>Welcome to Exemplary Note</h1>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'register' %}">Register</a>
+</div>
+{% endblock %}

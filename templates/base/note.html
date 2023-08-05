@@ -1,0 +1,9 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div>
+        <h2>{{ note.title }}</h2>
+        <p>{{ note.description }}</p>
+        <small>@{{ note.user }}</small>
+    </div>
+{% endblock %}

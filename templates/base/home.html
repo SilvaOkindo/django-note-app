@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <style>
+      div {
+          display: flex;
+          flex-direction: column;
+      }
+    </style>
+
+    <div>
+        <h1>Welcome {{ request.user }}</h1>
+        <a href="{% url 'logout' %}">Logout</a>
+        <a href="{% url 'create-note' %}">New Note</a>
+        {% for note in notes %}
+                <a href="{% url 'update-note' note.id %}">Edit</a>
+                <a href="{% url 'delete-note' note.id %}">Delete</a>
+                <a href="{% url 'note' note.id %}"> <h2>{{ note.title }}</h2></a>
+                <hr style="background-color: red; height: 1px; width: 100%;">
+
+        {% endfor %}
+    </div>
+{% endblock %}
